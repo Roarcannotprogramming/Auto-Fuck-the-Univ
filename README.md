@@ -1,2 +1,7 @@
 # Auto-Fuck-the-Univ
-少出门 戴口罩
+
+`secrets.py`:
+``` python
+username = 'your-username'
+password = 'your-password'
+```
