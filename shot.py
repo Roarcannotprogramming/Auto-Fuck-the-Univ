@@ -153,5 +153,8 @@ _token={_token}&now_address={now_address}&gps_now_address={gps_now_address}&now_
 
 code, head, html, redirect, log_ = hh.http('http://weixine.ustc.edu.cn/2020/daliy_report', raw=raw)
 
+time_fuck = re.search(r'上次上报时间：(.*?)，若无变化每天上报一次即可', html, re.DOTALL).group(1)
+print(time_fuck)
+
 if code == 200:
     print('Success')
