@@ -16,4 +16,5 @@ password = 'your-password'
 显示Success则打卡成功
 
 在vps上设置定时任务
-(`shot.py`文件中raw的POST数据结合自己情况修改 默认的是在武汉的)
+
+- Update 2020/2/19: 兼容湖北非湖北 只要打过卡 即可直接套脚本
