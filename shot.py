@@ -2,7 +2,6 @@
 import hackhttp
 import urllib
 from request_message import *
-import requests
 import re
 hh = hackhttp.hackhttp()
 code, head, html, redirect, log_ = hh.http('https://passport.ustc.edu.cn/login', raw = raw3)
@@ -110,12 +109,13 @@ dic = {
 url_dic = {k: urllib.quote(v) for k, v in dic.iteritems()}
 
 
-s = '''_token={_token}&now_address={now_address}&gps_now_address={gps_now_address}&now_province={now_province}&gps_province={gps_province}&now_city={now_city}&gps_city={gps_city}&now_detail={now_detail}&body_condition={body_condition}&body_condition_detail={body_condition_detail}&now_status={now_status}&now_status_detail={now_status_detail}&has_fever={has_fever}&last_touch_sars={last_touch_sars}&last_touch_sars_date={last_touch_sars_date}&last_touch_sars_detail={last_touch_sars_detail}&last_touch_hubei_date={last_touch_hubei_date}&last_touch_hubei_detail={last_touch_hubei_detail}&last_cross_hubei_date={last_cross_hubei_date}&last_cross_hubei_detail={last_cross_hubei_detail}&return_dest={return_dest}&return_dest_detail={return_dest_detail}&other_detail={other_detail}'''.format(**url_dic)
-url_dic['c_len'] = str(len(s))
 url_dic['xsrf_token'] = xsrf_token
 url_dic['l_session'] = l_session
 
 if now_province == '420000':
+    s = '''_token={_token}&now_address={now_address}&gps_now_address={gps_now_address}&now_province={now_province}&gps_province={gps_province}&now_city={now_city}&gps_city={gps_city}&now_detail={now_detail}&body_condition={body_condition}&body_condition_detail={body_condition_detail}&now_status={now_status}&now_status_detail={now_status_detail}&has_fever={has_fever}&last_touch_sars={last_touch_sars}&last_touch_sars_date={last_touch_sars_date}&last_touch_sars_detail={last_touch_sars_detail}&last_touch_hubei_date={last_touch_hubei_date}&last_touch_hubei_detail={last_touch_hubei_detail}&last_cross_hubei_date={last_cross_hubei_date}&last_cross_hubei_detail={last_cross_hubei_detail}&return_dest={return_dest}&return_dest_detail={return_dest_detail}&other_detail={other_detail}'''.format(**url_dic)
+    url_dic['c_len'] = str(len(s))
+
     raw = '''POST /2020/daliy_report HTTP/1.1
 Host: weixine.ustc.edu.cn
 Content-Length: {c_len}
@@ -134,6 +134,8 @@ Connection: close
 _token={_token}&now_address={now_address}&gps_now_address={gps_now_address}&now_province={now_province}&gps_province={gps_province}&now_city={now_city}&gps_city={gps_city}&now_detail={now_detail}&body_condition={body_condition}&body_condition_detail={body_condition_detail}&now_status={now_status}&now_status_detail={now_status_detail}&has_fever={has_fever}&last_touch_sars={last_touch_sars}&last_touch_sars_date={last_touch_sars_date}&last_touch_sars_detail={last_touch_sars_detail}&last_touch_hubei_date={last_touch_hubei_date}&last_touch_hubei_detail={last_touch_hubei_detail}&last_cross_hubei_date={last_cross_hubei_date}&last_cross_hubei_detail={last_cross_hubei_detail}&return_dest={return_dest}&return_dest_detail={return_dest_detail}&other_detail={other_detail}'''.format(**url_dic)
 
 else:
+    s = '''_token={_token}&now_address={now_address}&gps_now_address={gps_now_address}&now_province={now_province}&gps_province={gps_province}&now_city={now_city}&gps_city={gps_city}&now_detail={now_detail}&body_condition={body_condition}&body_condition_detail={body_condition_detail}&now_status={now_status}&now_status_detail={now_status_detail}&has_fever={has_fever}&last_touch_sars={last_touch_sars}&last_touch_sars_date={last_touch_sars_date}&last_touch_sars_detail={last_touch_sars_detail}&last_touch_hubei={last_touch_hubei}&last_touch_hubei_date={last_touch_hubei_date}&last_touch_hubei_detail={last_touch_hubei_detail}&last_cross_hubei={last_cross_hubei}&last_cross_hubei_date={last_cross_hubei_date}&last_cross_hubei_detail={last_cross_hubei_detail}&return_dest={return_dest}&return_dest_detail={return_dest_detail}&other_detail={other_detail}'''.format(**url_dic)
+    url_dic['c_len'] = str(len(s))
     raw = '''POST /2020/daliy_report HTTP/1.1
 Host: weixine.ustc.edu.cn
 Content-Length: {c_len}
