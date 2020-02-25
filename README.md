@@ -18,7 +18,7 @@ password = 'your-password'
 在vps上设置crontab定时任务
 
 ```
-0 6,15,18 * * * "python2 /path/to/Auto-Fuck-the-Univ/shot.py > /dev/null"
+14 6,15,18 * * * /path/to/python2 /path/to/Auto-Fuck-the-Univ/shot.py > /dev/null
 ```
 
 
