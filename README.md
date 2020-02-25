@@ -24,6 +24,5 @@ password = 'your-password'
 
 
 
-
 ## 更新
 - Update 2020/2/19: 兼容湖北非湖北 只要打过卡 即可直接套脚本
