@@ -17,5 +17,13 @@ password = 'your-password'
 
 在vps上设置crontab定时任务
 
+```
+0 6,15,18 * * * "python2 /path/to/Auto-Fuck-the-Univ/shot.py > /dev/null"
+```
+
+
+
+
+
 ## 更新
 - Update 2020/2/19: 兼容湖北非湖北 只要打过卡 即可直接套脚本
