@@ -15,9 +15,9 @@ password = 'your-password'
 运行 `python2 shot.py`
 显示Success且输出时间和当前时间对的上则打卡成功
 
-在vps上设置crontab定时任务
+在vps上设置crontab定时任务`crontab -e`
 
-```
+```shell
 14 6,15,18 * * * /path/to/python2 /path/to/Auto-Fuck-the-Univ/shot.py > /dev/null
 ```
 
